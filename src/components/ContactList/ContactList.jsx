@@ -4,7 +4,9 @@ import s from "./Contact.module.css";
 export const ContactList = ({ contacts, handleDelete }) => {
   return (
     <ul className={s.list}>
-      <Contact contacts={contacts} handleDelete={handleDelete} />
+      {contacts.map((item) => (
+        <Contact contact={item} handleDelete={handleDelete} key={item.id} />
+      ))}
     </ul>
   );
 };
